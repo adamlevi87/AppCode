@@ -12,9 +12,9 @@ jobs:
           command: |
             version="build-$CIRCLE_BUILD_NUM"
             echo $version
-            docker build -t adamlevi87/project1-todo-app:$version .
+            docker build -t adamlevi87/todo-app:$version .
             echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
-            docker push adamlevi87/project1-todo-app:$version
+            docker push adamlevi87/todo-app:$version
 
   Update_manifest:
     docker:
